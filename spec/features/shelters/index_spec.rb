@@ -2,8 +2,16 @@ require 'rails_helper'
 
 RSpec.describe "when I visit the shelters index page", type: :feature do
   it "I can see all shelters" do
-    shelter_1 = Shelter.create(name: "Pig Paradise")
-    shelter_2 = Shelter.create(name: "The Oinkery")
+    shelter_1 = Shelter.create(name: "Pig Paradise",
+                              address: "123 Turing Ave",
+                              city: "Denver",
+                              state: "Colorado",
+                              zip: "80216")
+    shelter_2 = Shelter.create(name: "The Oinkery",
+                              address: "543 Main St",
+                              city: "Aurora",
+                              state: "Colorado",
+                              zip: "80255")
 
     visit "/shelters"
 
