@@ -135,7 +135,7 @@ Then I see the shelter with that id including the shelter's:
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 4, Shelter Creation
 
@@ -157,7 +157,7 @@ and I am redirected to the Shelter Index page where I see the new Shelter listed
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 5, Shelter Update
 
