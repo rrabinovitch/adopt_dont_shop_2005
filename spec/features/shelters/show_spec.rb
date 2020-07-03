@@ -39,4 +39,27 @@ RSpec.describe "when I visit shelter show page", type: :feature do
     expect(current_path).to eq("/shelters/#{shelter.id}")
     expect(page).to have_content("Pig Paradise LLC")
   end
+
+  it "I can delete the shelter" do
+    shelter_1 = Shelter.create(name: "Pig Paradise",
+                              address: "123 Turing Ave",
+                              city: "Denver",
+                              state: "Colorado",
+                              zip: "80216")
+    shelter_2 = Shelter.create(name: "The Oinkery",
+                              address: "543 Main St",
+                              city: "Aurora",
+                              state: "Colorado",
+                              zip: "80255")
+
+    visit "/shelters/#{shelter_1.id}"
+
+    expect(page).to have_content("Pig Paradise")
+
+    click_on 'Delete Shelter'
+
+    expect(current_path).to eq("/shelters")
+
+    expect(page).to_not have_content("Pig Paradise")
+  end
 end
