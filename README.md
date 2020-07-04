@@ -243,7 +243,7 @@ Then I see the pet with that id including the pet's:
 ```
 
 ```
-[X] done
+[] done
 
 User Story 10, Shelter Pet Creation
 
