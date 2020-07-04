@@ -63,7 +63,7 @@ end
 #                   shelter_id: shelter_1.id)
 #
 # pet_2 = Pet.create(name: "Deb",
-#                   image: "https://petpigs.com/photo-gallery/cute-pig-nappa/",
+#                   image: "https://petpigs.com/wp-content/uploads/2011/04/cute-pig-NAPPA.jpg",
 #                   age: 26,
 #                   sex: "Female",
 #                   description: "She's a gift.",
