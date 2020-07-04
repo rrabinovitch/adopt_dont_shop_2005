@@ -1,0 +1,9 @@
+<h1>All Pets</h1>
+
+<% @pets.each do |pet| %>
+    <h2><%= pet.name %></h2>
+    <%= image_tag(pet.image, alt: "A photo of #{pet.name}", size: "300") %>
+    <li>Age: <%= pet.age %></li>
+    <li>Sex: <%= pet.sex %></li>
+    <li>Shelter: <%= Shelter.find(pet.shelter_id).name %></li>
+<% end %>
