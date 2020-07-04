@@ -10,7 +10,7 @@ RSpec.describe Shelter do
   end
 
   describe 'relationships' do
-
+    it { should have_many :pets }
   end
 
   describe 'methods' do
