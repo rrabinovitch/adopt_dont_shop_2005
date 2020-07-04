@@ -14,6 +14,6 @@ RSpec.describe Shelter do
   end
 
   describe 'methods' do
-    
+
   end
 end
