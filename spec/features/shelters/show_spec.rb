@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "when I visit shelter show page", type: :feature do
-  it "I can see shelter with the specified id and its details" do
+RSpec.describe "when I visit a shelter show page" do
+  it "I can see the shelter with the specified id and its details" do
     shelter = Shelter.create(name: "Pig Paradise",
                               address: "123 Turing Ave",
                               city: "Denver",

@@ -220,6 +220,7 @@
           1,
           null,
           1,
+          1,
           null,
           null,
           null,
@@ -235,6 +236,38 @@
       "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_2005/app/helpers/home_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_2005/spec/features/pets/show_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -279,7 +312,7 @@
           null,
           null,
           1,
-          1,
+          null,
           1,
           1,
           1,
@@ -491,6 +524,10 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -556,6 +593,6 @@
         ]
       }
     },
-    "timestamp": 1593903250
+    "timestamp": 1593904674
   }
 }
