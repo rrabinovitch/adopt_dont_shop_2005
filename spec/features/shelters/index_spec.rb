@@ -46,11 +46,6 @@ RSpec.describe "when I visit the shelters index page", type: :feature do
                               city: "Denver",
                               state: "Colorado",
                               zip: "80216")
-    shelter_2 = Shelter.create(name: "The Oinkery",
-                              address: "543 Main St",
-                              city: "Aurora",
-                              state: "Colorado",
-                              zip: "80255")
 
     visit '/shelters'
 
@@ -64,5 +59,23 @@ RSpec.describe "when I visit the shelters index page", type: :feature do
 
     expect(current_path).to eq("/shelters/#{shelter_1.id}")
     expect(page).to have_content("Pig Paradise LLC")
+  end
+
+  it "I can select a specific shelter to delete" do
+    shelter_1 = Shelter.create(name: "Pig Paradise",
+                              address: "123 Turing Ave",
+                              city: "Denver",
+                              state: "Colorado",
+                              zip: "80216")
+
+    visit '/shelters'
+
+    expect(page).to have_content("Pig Paradise")
+
+    find("##{shelter_1.name.gsub(" ", "")}Delete").click
+
+    expect(current_path).to eq("/shelters")
+
+    expect(page).to_not have_content("Pig Paradise")
   end
 end
