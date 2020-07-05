@@ -1,7 +1,7 @@
 <h1>All Shelters</h1>
 
 <% @shelters.each do |shelter| %>
-  <h2><%= shelter.name %></h2>
+  <h2><%= link_to "#{shelter.name}", "/shelters/#{shelter.id}" %></h2>
   <%= link_to "Update Shelter", "/shelters/#{shelter.id}/edit", id: "#{shelter.name.gsub(" ", "")}Edit" %>
   <%= link_to "Delete Shelter", "/shelters/#{shelter.id}", method: :delete, id: "#{shelter.name.gsub(" ", "")}Delete"%>
 <% end %>

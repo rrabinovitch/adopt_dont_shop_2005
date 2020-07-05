@@ -78,4 +78,26 @@ RSpec.describe "when I visit the shelters index page", type: :feature do
 
     expect(page).to_not have_content("Pig Paradise")
   end
+
+  it "I can click on a shelter to view its show page" do
+    shelter_1 = Shelter.create(name: "Pig Paradise",
+                              address: "123 Turing Ave",
+                              city: "Denver",
+                              state: "Colorado",
+                              zip: "80216")
+    shelter_2 = Shelter.create(name: "The Oinkery",
+                              address: "543 Main St",
+                              city: "Aurora",
+                              state: "Colorado",
+                              zip: "80255")
+
+    visit "/shelters"
+
+    click_link "#{shelter_1.name}"
+
+    expect(current_path).to eq("/shelters/#{shelter_1.id}")
+
+    expect(page).to have_content(shelter_1.name)
+    expect(page).to have_content("Address: #{shelter_1.address}")
+  end
 end
