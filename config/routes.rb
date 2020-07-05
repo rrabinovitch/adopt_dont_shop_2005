@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get '/pets/:id', to: 'pets#show'
   get '/pets/:id/edit', to: 'pets#edit'
   patch '/pets/:id', to: 'pets#update'
+  delete '/pets/:id', to: 'pets#destroy'
 
 
   # when rails sees get '/shelters/new' it would route to 'shelters/:id' because it thinks new = :id
