@@ -1,0 +1,18 @@
+<h1>Create a New Pet at <%= @shelter.name %> </h1>
+
+<%= form_tag "/shelters/#{@shelter.id}/pets" do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %> <br>
+  <%= label_tag :image %>
+  <%= text_field_tag :image %> <br>
+  <%= label_tag :description %>
+  <%= text_field_tag :description %> <br>
+  <%= label_tag :age %>
+  <%= number_field_tag :age %> <br>
+  <%= label_tag :sex %>
+  <%= text_field_tag :sex, "Female or Male" %> <br>
+  <%# <%= select_tag(:sex, options_for_select("Female", "Male")) %>  %>
+  <%# change ^ to select_tag or radio buttons %>
+  <% hidden_field :adoption_status, "Adoptable" %>
+  <%= submit_tag "Create Pet" %>
+<% end %>

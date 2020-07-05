@@ -6,3 +6,5 @@
   <li>Age: <%= shelter_pet.age %></li>
   <li>Sex: <%= shelter_pet.sex %></li>
 <% end %>
+
+<%= link_to "Create Pet", "/shelters/#{@shelter.id}/pets/new" %>

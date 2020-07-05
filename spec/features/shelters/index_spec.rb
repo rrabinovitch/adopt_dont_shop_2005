@@ -37,5 +37,6 @@ RSpec.describe "when I visit the shelters index page", type: :feature do
     click_on 'Create Shelter'
 
     expect(current_path).to eq('/shelters')
+    expect(page).to have_content("Pig Paradise")
   end
 end

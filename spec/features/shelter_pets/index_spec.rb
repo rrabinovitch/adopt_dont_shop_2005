@@ -53,4 +53,33 @@ RSpec.describe "when I visit a shelter's pets index page" do
     expect(page).to_not have_content(pet_3.age)
     expect(page).to_not have_content(pet_3.sex)
   end
+
+  it "I can follow a link to create a new pet for that shelter" do
+    shelter_1 = Shelter.create(name: "Pig Paradise",
+                              address: "123 Turing Ave",
+                              city: "Denver",
+                              state: "Colorado",
+                            zip: "80216")
+
+    visit "/shelters/#{shelter_1.id}/pets"
+
+    click_link 'Create Pet'
+
+    expect(current_path).to eq("/shelters/#{shelter_1.id}/pets/new")
+
+    fill_in :name, with: "Max"
+    fill_in :image, with: "https://cdn.pixabay.com/photo/2016/01/22/12/23/pig-1155658_1280.jpg"
+    fill_in :age, with: 2
+    # select "Female", from "Sex"
+    fill_in :sex, with: "Female"
+    fill_in :description, with: "Find your next gal pal in Max the teacup pig."
+
+    click_on 'Create Pet'
+
+    expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
+    expect(page).to have_content("Max")
+    # expect(page).to have_xpath("//img[@src=https://cdn.pixabay.com/photo/2016/01/22/12/23/pig-1155658_1280.jpg]")
+    expect(page).to have_content("Age: 2")
+    expect(page).to have_content("Sex: Female")
+  end
 end
