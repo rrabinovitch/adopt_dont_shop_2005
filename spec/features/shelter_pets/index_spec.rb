@@ -115,8 +115,7 @@ RSpec.describe "when I visit a shelter's pets index page" do
     expect(current_path).to eq("/shelters/#{shelter_1.id}/pets/#{pet_1.id}/edit")
 
     fill_in :name, with: "Maxiiii"
-    # save_and_open_page
-    # binding.pry
+
     click_on 'Update'
 
     expect(current_path).to eq("/shelters/#{shelter_1.id}/pets/#{pet_1.id}")
