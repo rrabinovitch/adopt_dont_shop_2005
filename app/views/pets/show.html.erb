@@ -7,3 +7,5 @@
   <li>Sex: <%= @pet.sex %></li>
 </ul>
 <p>About <%= @pet.name %>: <%= @pet.description %> </p>
+
+<%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %>

@@ -15,8 +15,11 @@ Rails.application.routes.draw do
   get '/shelters/:shelter_id/pets/new', to: 'shelter_pets#new'
   post '/shelters/:shelter_id/pets', to: 'shelter_pets#create'
 
-  get '/pets/:id', to: 'pets#show'
   get '/pets', to: 'pets#index'
+  get '/pets/:id', to: 'pets#show'
+  get '/pets/:id/edit', to: 'pets#edit'
+  patch '/pets/:id', to: 'pets#update'
+
 
   # when rails sees get '/shelters/new' it would route to 'shelters/:id' because it thinks new = :id
   # it checks each route one by one from top to bottom to see if the request it received matches each route listed here

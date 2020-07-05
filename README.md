@@ -243,7 +243,7 @@ Then I see the pet with that id including the pet's:
 ```
 
 ```
-[] done
+[basics done, missing image test + sex attribute needs data validation] done
 
 User Story 10, Shelter Pet Creation
 
@@ -266,7 +266,7 @@ and I am redirected to the Shelter Pets Index page where I can see the new pet l
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 11, Pet Update
 
