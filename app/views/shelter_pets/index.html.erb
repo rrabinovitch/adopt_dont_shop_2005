@@ -5,6 +5,9 @@
   <%= image_tag(shelter_pet.image, alt: "A photo of #{shelter_pet.name}", size: "300") %>
   <li>Age: <%= shelter_pet.age %></li>
   <li>Sex: <%= shelter_pet.sex %></li>
+
+  <%= link_to "Update Pet", "/shelters/#{@shelter.id}/#{shelter_pet.id}/edit" %>
+  <%= link_to "Delete Pet", "/shelters/#{@shelter.id}/#{shelter_pet.id}", method: :delete %>
 <% end %>
 
 <%= link_to "Create Pet", "/shelters/#{@shelter.id}/pets/new" %>
