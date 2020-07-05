@@ -4,6 +4,11 @@ class ShelterPetsController < ApplicationController
     @shelter_pets = Pet.where("shelter_id = #{@shelter.id}")
   end
 
+  def show
+    @shelter = Shelter.find(params[:shelter_id])
+    @pet = Pet.find(params[:pet_id])
+  end
+
   def new
     @shelter = Shelter.find(params[:shelter_id])
   end
@@ -14,6 +19,18 @@ class ShelterPetsController < ApplicationController
     pet.adoption_status = "Adoptable"
     pet.shelter_id = shelter_id
     redirect_to "/shelters/#{shelter_id}/pets"
+  end
+
+  def edit
+    @pet = Pet.find(params[:pet_id])
+    @shelter = Shelter.find(params[:shelter_id])
+  end
+
+  def update
+    @shelter = Shelter.find(params[:shelter_id])
+    @pet = Pet.find(params[:pet_id])
+    @pet.update(pet_params)
+    redirect_to "/shelters/#{@shelter.id}/pets/#{@pet.id}"
   end
 
   private

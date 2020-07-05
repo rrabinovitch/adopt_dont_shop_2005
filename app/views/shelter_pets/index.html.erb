@@ -6,8 +6,8 @@
   <li>Age: <%= shelter_pet.age %></li>
   <li>Sex: <%= shelter_pet.sex %></li>
 
-  <%= link_to "Update Pet", "/shelters/#{@shelter.id}/#{shelter_pet.id}/edit" %>
+  <%= link_to "Update Pet", "/shelters/#{@shelter.id}/pets/#{shelter_pet.id}/edit", id: "#{shelter_pet.name.gsub(" ", "")}Edit"%>
   <%= link_to "Delete Pet", "/shelters/#{@shelter.id}/#{shelter_pet.id}", method: :delete %>
 <% end %>
-
+<br><br><br>
 <%= link_to "Create Pet", "/shelters/#{@shelter.id}/pets/new" %>

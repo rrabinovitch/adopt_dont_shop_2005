@@ -82,4 +82,45 @@ RSpec.describe "when I visit a shelter's pets index page" do
     expect(page).to have_content("Age: 2")
     expect(page).to have_content("Sex: Female")
   end
+
+  it "I can select a specific pet from that shelter to edit its info" do
+    shelter_1 = Shelter.create(name: "Pig Paradise",
+                              address: "123 Turing Ave",
+                              city: "Denver",
+                              state: "Colorado",
+                              zip: "80216")
+
+    pet_1 = Pet.create(name: "Max",
+                      image: "https://cdn.pixabay.com/photo/2016/01/22/12/23/pig-1155658_1280.jpg",
+                      age: 2,
+                      sex: "Female",
+                      description: "Find your next gal pal in Max the teacup pig.",
+                      adoption_status: "Adoptable",
+                      shelter_id: shelter_1.id)
+
+    pet_2 = Pet.create(name: "Deb",
+                      image: "https://petpigs.com/wp-content/uploads/2011/04/cute-pig-NAPPA.jpg",
+                      age: 26,
+                      sex: "Female",
+                      description: "She's a gift.",
+                      adoption_status: "Adoptable",
+                      shelter_id: shelter_1.id)
+
+    visit "/shelters/#{shelter_1.id}/pets"
+
+    expect(page).to_not have_content("Maxiiii")
+
+    find("##{pet_1.name.gsub(" ", "")}Edit").click
+
+    expect(current_path).to eq("/shelters/#{shelter_1.id}/pets/#{pet_1.id}/edit")
+
+    fill_in :name, with: "Maxiiii"
+    # save_and_open_page
+    # binding.pry
+    click_on 'Update'
+
+    expect(current_path).to eq("/shelters/#{shelter_1.id}/pets/#{pet_1.id}")
+
+    expect(page).to have_content("Maxiiii")
+  end
 end
