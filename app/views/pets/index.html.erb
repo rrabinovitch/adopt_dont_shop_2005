@@ -9,5 +9,5 @@
     <li>Shelter: <%= Shelter.find(pet.shelter_id).name %></li>
   </ul>
   <%= link_to "Update Pet", "/pets/#{pet.id}/edit", id: "#{pet.name.gsub(" ", "")}Edit" %>
-  <%= link_to "Delete Pet", "/pets/#{pet.id}", method: :delete %>
+  <%= link_to "Delete Pet", "/pets/#{pet.id}", method: :delete, id: "#{pet.name.gsub(" ", "")}Delete" %>
 <% end %>
