@@ -6,4 +6,7 @@
     <li>Age: <%= pet.age %></li>
     <li>Sex: <%= pet.sex %></li>
     <li>Shelter: <%= Shelter.find(pet.shelter_id).name %></li>
+
+    <%= link_to "Update Pet", "/pets/#{pet.id}/edit" %>
+    <%# <%= link_to "Delete Shelter", "/shelters/#{shelter.id}", method: :delete %> %>
 <% end %>
