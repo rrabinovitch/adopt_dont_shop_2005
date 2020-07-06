@@ -220,6 +220,8 @@ User Story 8, Shelter Pets Index
 As a visitor
 When I visit '/shelters/:shelter_id/pets'
 Then I see each Pet that can be adopted from that Shelter with that shelter_id including the Pet's:
+# this story is expecting for only pets that have adoptable_status = adoptable
+# this logic should live in the model file, not the view or controller files
 - image
 - name
 - approximate age

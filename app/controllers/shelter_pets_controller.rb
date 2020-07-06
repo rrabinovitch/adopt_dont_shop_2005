@@ -18,6 +18,8 @@ class ShelterPetsController < ApplicationController
     pet = Pet.create(pet_params)
     pet.adoption_status = "Adoptable"
     pet.shelter_id = shelter_id
+    # missing pet.save (always need to save to store something in the DB, but create 'saves' under the hood)
+    # create = new + save
     redirect_to "/shelters/#{shelter_id}/pets"
   end
 

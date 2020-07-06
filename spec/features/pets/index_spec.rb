@@ -31,6 +31,7 @@ RSpec.describe "when I visit the pets index page", type: :feature do
     expect(page).to have_content(pet_1.age)
     expect(page).to have_content(pet_1.sex)
     expect(page).to have_content(Shelter.find(pet_1.shelter_id).name)
+    # expect(page).to have_content(shelter_1.name)
 
     expect(page).to have_content(pet_2.name)
     expect(page).to have_xpath("//img[@src='#{pet_2.image}']")
